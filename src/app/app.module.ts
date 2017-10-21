@@ -51,18 +51,17 @@ const APP_DIRECTIVES = [
   SIDEBAR_TOGGLE_DIRECTIVES
 ]
 
-// Import routing module
-import { AppRoutingModule } from './app.routing';
-
 // Import 3rd party components
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
+import {RouterModule} from "@angular/router";
+import {AppRoutes} from "./app.routing";
 
 @NgModule({
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    RouterModule.forRoot(AppRoutes),
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
     ChartsModule
@@ -71,7 +70,7 @@ import { ChartsModule } from 'ng2-charts/ng2-charts';
     AppComponent,
     ...APP_CONTAINERS,
     ...APP_COMPONENTS,
-    ...APP_DIRECTIVES
+    ...APP_DIRECTIVES,
   ],
   providers: [{
     provide: LocationStrategy,

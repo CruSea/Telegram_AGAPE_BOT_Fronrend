@@ -1,13 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import {FullLayout, SimpleLayout} from './containers';
 
-// Import Containers
-import {
-  FullLayout,
-  SimpleLayout
-} from './containers';
-
-export const routes: Routes = [
+export const AppRoutes: Routes = [
   {
     path: '',
     redirectTo: 'dashboard',
@@ -16,20 +11,21 @@ export const routes: Routes = [
   {
     path: '',
     component: FullLayout,
-    data: {
-      title: 'Home'
-    },
     children: [
       {
-        path: 'dashboard',
-        loadChildren: './views/dashboard/dashboard.module#DashboardModule'
+        path: 'home',
+        loadChildren: './agape-page/agape-page.module#AgapePageModule'
+      }
+    ]
+  },
+  {
+    path: '',
+    component: SimpleLayout,
+    children: [
+      {
+        path: 'auth',
+        loadChildren: './agape-auth/agape-auth.module#AgapeAuthModule'
       }
     ]
   }
 ];
-
-@NgModule({
-  imports: [ RouterModule.forRoot(routes) ],
-  exports: [ RouterModule ]
-})
-export class AppRoutingModule {}

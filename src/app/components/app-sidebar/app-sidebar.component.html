@@ -3,12 +3,27 @@
   <app-sidebar-form></app-sidebar-form>
   <nav class="sidebar-nav">
     <ul class="nav">
+      <li class="divider"></li>
       <li class="nav-title">
-        Dashboard
+        Agape Telegram BOT
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLinkActive="active" [routerLink]="['/dashboard']"><i class="icon-speedometer"></i> Dashboard <span class="badge badge-info">NEW</span></a>
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/home/bot-menus']"><i class="icon-puzzle"></i>Menu Builder</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/home/bot-contents']"><i class="icon-puzzle"></i>BOT Contents</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/home/bot-sub-menu']"><i class="icon-puzzle"></i>BOT Sub Menu</a>
+      </li>
+      <li class="divider"></li>
+      <li class="nav-title">
+        AGAPE-BOT Configuration
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/home/users']"><i class="icon-pie-chart"></i> Users</a>
+      </li>
+      <li class="divider"></li>
     </ul>
   </nav>
   <app-sidebar-footer></app-sidebar-footer>
